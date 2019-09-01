@@ -79,7 +79,7 @@ body{
 
 }
 
-.btn{
+.btn,.empty{
     height:64px;
     width: 64px;
    color:#fff;
