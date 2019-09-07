@@ -1,7 +1,10 @@
 const buttons = document.querySelectorAll('.btn')
 const expression = document.querySelector('#mathexpression p')
 const result = document.querySelector('#result p')
+const display = document.querySelector('#display')
 const operators = ["+", "-", "*", "/"];
+
+let state = true // this means the calculator is ON
 function calculate (){
     const answer = eval(expression.textContent)
   
@@ -18,6 +21,26 @@ function addToExpression (input){
 function clickHandler (e) {
  const value = e.target.dataset.key
    
+
+    if( value === 'ac'){
+        
+        if(state){
+            expression.textContent = ''
+            result.textContent = ''
+            display.style.opacity ="0"
+            state= !state
+            return
+        }
+
+        display.style.opacity = "1"
+        state= !state
+        return
+
+    }
+
+
+    if(state){
+
     if( value === '='){
         calculate()
         return
@@ -41,6 +64,7 @@ function clickHandler (e) {
     }
 
     addToExpression( value )
+    }
     
 
 }

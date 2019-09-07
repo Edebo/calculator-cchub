@@ -79,7 +79,7 @@ body{
 
 }
 
-.btn,.empty{
+.btn{
     height:64px;
     width: 64px;
    color:#fff;
@@ -97,3 +97,10 @@ body{
     background-color: #127D8B;
     font-weight:900;
 }
+
+.empty{
+    width: 128px;
+    grid-column: span 2;
+   
+}
+
